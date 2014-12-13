@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA3978AE1A3CEA9B00BC6ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978A21A3CEA9B00BC6ECF /* AppDelegate.swift */; };
+		FA3978AF1A3CEA9B00BC6ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3978A31A3CEA9B00BC6ECF /* Main.storyboard */; };
+		FA3978B01A3CEA9B00BC6ECF /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3978A51A3CEA9B00BC6ECF /* DataModel.xcdatamodeld */; };
+		FA3978B11A3CEA9B00BC6ECF /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978A81A3CEA9B00BC6ECF /* Exam.swift */; };
+		FA3978B21A3CEA9B00BC6ECF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3978A91A3CEA9B00BC6ECF /* Images.xcassets */; };
+		FA3978B31A3CEA9B00BC6ECF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3978AA1A3CEA9B00BC6ECF /* Info.plist */; };
+		FA3978B41A3CEA9B00BC6ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978AB1A3CEA9B00BC6ECF /* LoginViewController.swift */; };
+		FA3978B51A3CEA9B00BC6ECF /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978AC1A3CEA9B00BC6ECF /* MasterViewController.swift */; };
+		FA3978B61A3CEA9B00BC6ECF /* NUIGWebsiteExamDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978AD1A3CEA9B00BC6ECF /* NUIGWebsiteExamDataProvider.swift */; };
+		FA3978C21A3CEBD300BC6ECF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3978C01A3CEBD300BC6ECF /* Info.plist */; };
+		FA3978C31A3CEBD300BC6ECF /* NUIGExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978C11A3CEBD300BC6ECF /* NUIGExamTests.swift */; };
+		FA5772081A3A669000265041 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5772071A3A669000265041 /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA2948AF1A39DAFE00971AD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA29488F1A39DAFE00971AD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA2948961A39DAFE00971AD6;
+			remoteInfo = nuigseat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA2948971A39DAFE00971AD6 /* NUIGExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUIGExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA2948AE1A39DAFE00971AD6 /* NUIGExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NUIGExamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3978A21A3CEA9B00BC6ECF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA3978A41A3CEA9B00BC6ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA3978A61A3CEA9B00BC6ECF /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		FA3978A81A3CEA9B00BC6ECF /* Exam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		FA3978A91A3CEA9B00BC6ECF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FA3978AA1A3CEA9B00BC6ECF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA3978AB1A3CEA9B00BC6ECF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FA3978AC1A3CEA9B00BC6ECF /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		FA3978AD1A3CEA9B00BC6ECF /* NUIGWebsiteExamDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUIGWebsiteExamDataProvider.swift; sourceTree = "<group>"; };
+		FA3978C01A3CEBD300BC6ECF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA3978C11A3CEBD300BC6ECF /* NUIGExamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUIGExamTests.swift; sourceTree = "<group>"; };
+		FA5772071A3A669000265041 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA2948941A39DAFE00971AD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA5772081A3A669000265041 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA2948AB1A39DAFE00971AD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA29488E1A39DAFE00971AD6 = {
+			isa = PBXGroup;
+			children = (
+				FA3978BF1A3CEBD300BC6ECF /* NUIGExamTests */,
+				FA3978A11A3CEA9B00BC6ECF /* NUIGExam */,
+				FA5772071A3A669000265041 /* CoreData.framework */,
+				FA2948981A39DAFE00971AD6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA2948981A39DAFE00971AD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA2948971A39DAFE00971AD6 /* NUIGExam.app */,
+				FA2948AE1A39DAFE00971AD6 /* NUIGExamTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA3978A11A3CEA9B00BC6ECF /* NUIGExam */ = {
+			isa = PBXGroup;
+			children = (
+				FA3978A21A3CEA9B00BC6ECF /* AppDelegate.swift */,
+				FA3978A31A3CEA9B00BC6ECF /* Main.storyboard */,
+				FA3978A51A3CEA9B00BC6ECF /* DataModel.xcdatamodeld */,
+				FA3978A81A3CEA9B00BC6ECF /* Exam.swift */,
+				FA3978A91A3CEA9B00BC6ECF /* Images.xcassets */,
+				FA3978AA1A3CEA9B00BC6ECF /* Info.plist */,
+				FA3978AB1A3CEA9B00BC6ECF /* LoginViewController.swift */,
+				FA3978AC1A3CEA9B00BC6ECF /* MasterViewController.swift */,
+				FA3978AD1A3CEA9B00BC6ECF /* NUIGWebsiteExamDataProvider.swift */,
+			);
+			path = NUIGExam;
+			sourceTree = "<group>";
+		};
+		FA3978BF1A3CEBD300BC6ECF /* NUIGExamTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA3978C01A3CEBD300BC6ECF /* Info.plist */,
+				FA3978C11A3CEBD300BC6ECF /* NUIGExamTests.swift */,
+			);
+			path = NUIGExamTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA2948961A39DAFE00971AD6 /* NUIGExam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA2948B81A39DAFE00971AD6 /* Build configuration list for PBXNativeTarget "NUIGExam" */;
+			buildPhases = (
+				FA2948931A39DAFE00971AD6 /* Sources */,
+				FA2948941A39DAFE00971AD6 /* Frameworks */,
+				FA2948951A39DAFE00971AD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NUIGExam;
+			productName = nuigseat;
+			productReference = FA2948971A39DAFE00971AD6 /* NUIGExam.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA2948AD1A39DAFE00971AD6 /* NUIGExamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA2948BB1A39DAFE00971AD6 /* Build configuration list for PBXNativeTarget "NUIGExamTests" */;
+			buildPhases = (
+				FA2948AA1A39DAFE00971AD6 /* Sources */,
+				FA2948AB1A39DAFE00971AD6 /* Frameworks */,
+				FA2948AC1A39DAFE00971AD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA2948B01A39DAFE00971AD6 /* PBXTargetDependency */,
+			);
+			name = NUIGExamTests;
+			productName = nuigseatTests;
+			productReference = FA2948AE1A39DAFE00971AD6 /* NUIGExamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA29488F1A39DAFE00971AD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = alex;
+				TargetAttributes = {
+					FA2948961A39DAFE00971AD6 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					FA2948AD1A39DAFE00971AD6 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = FA2948961A39DAFE00971AD6;
+					};
+				};
+			};
+			buildConfigurationList = FA2948921A39DAFE00971AD6 /* Build configuration list for PBXProject "NUIGExam" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA29488E1A39DAFE00971AD6;
+			productRefGroup = FA2948981A39DAFE00971AD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA2948961A39DAFE00971AD6 /* NUIGExam */,
+				FA2948AD1A39DAFE00971AD6 /* NUIGExamTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA2948951A39DAFE00971AD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3978AF1A3CEA9B00BC6ECF /* Main.storyboard in Resources */,
+				FA3978B21A3CEA9B00BC6ECF /* Images.xcassets in Resources */,
+				FA3978B31A3CEA9B00BC6ECF /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA2948AC1A39DAFE00971AD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3978C21A3CEBD300BC6ECF /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA2948931A39DAFE00971AD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3978B61A3CEA9B00BC6ECF /* NUIGWebsiteExamDataProvider.swift in Sources */,
+				FA3978B51A3CEA9B00BC6ECF /* MasterViewController.swift in Sources */,
+				FA3978B41A3CEA9B00BC6ECF /* LoginViewController.swift in Sources */,
+				FA3978AE1A3CEA9B00BC6ECF /* AppDelegate.swift in Sources */,
+				FA3978B01A3CEA9B00BC6ECF /* DataModel.xcdatamodeld in Sources */,
+				FA3978B11A3CEA9B00BC6ECF /* Exam.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA2948AA1A39DAFE00971AD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3978C31A3CEBD300BC6ECF /* NUIGExamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA2948B01A39DAFE00971AD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA2948961A39DAFE00971AD6 /* NUIGExam */;
+			targetProxy = FA2948AF1A39DAFE00971AD6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA3978A31A3CEA9B00BC6ECF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA3978A41A3CEA9B00BC6ECF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA2948B61A39DAFE00971AD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA2948B71A39DAFE00971AD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA2948B91A39DAFE00971AD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = NUIGExam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = NUIGExam;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FA2948BA1A39DAFE00971AD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = NUIGExam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = NUIGExam;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FA2948BC1A39DAFE00971AD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NUIGExamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = NUIGExamTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NUIGExam.app/NUIGExam";
+			};
+			name = Debug;
+		};
+		FA2948BD1A39DAFE00971AD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NUIGExamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = NUIGExamTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NUIGExam.app/NUIGExam";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA2948921A39DAFE00971AD6 /* Build configuration list for PBXProject "NUIGExam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA2948B61A39DAFE00971AD6 /* Debug */,
+				FA2948B71A39DAFE00971AD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA2948B81A39DAFE00971AD6 /* Build configuration list for PBXNativeTarget "NUIGExam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA2948B91A39DAFE00971AD6 /* Debug */,
+				FA2948BA1A39DAFE00971AD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA2948BB1A39DAFE00971AD6 /* Build configuration list for PBXNativeTarget "NUIGExamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA2948BC1A39DAFE00971AD6 /* Debug */,
+				FA2948BD1A39DAFE00971AD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA3978A51A3CEA9B00BC6ECF /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA3978A61A3CEA9B00BC6ECF /* DataModel.xcdatamodel */,
+			);
+			currentVersion = FA3978A61A3CEA9B00BC6ECF /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA29488F1A39DAFE00971AD6 /* Project object */;
+}
