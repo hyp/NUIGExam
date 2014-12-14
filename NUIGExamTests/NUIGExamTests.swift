@@ -15,24 +15,18 @@ class NUIGExamTests: XCTestCase {
     }
     
     func testNUIGWebsiteExamSessionNameParsing() {
-        let provider = NUIGWebsiteExamDataProvider()
-        
-        XCTAssertEqual(provider.parseExamSessionName(" Semester 1 2014/2015 - 0000000"), "Semester 1 2014/2015")
-        XCTAssertEqual(provider.parseExamSessionName("Semester 1"), "Semester 1")
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseExamSessionName(" Semester 1 2014/2015 - 0000000"), "Semester 1 2014/2015")
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseExamSessionName("Semester 1"), "Semester 1")
     }
     
     func testNUIGWebsiteModuleNameParsing() {
-        let provider = NUIGWebsiteExamDataProvider()
-        
-        XCTAssertEqual(provider.parseModuleName("Name - Paper 1 - Written"), "Name")
-        XCTAssertEqual(provider.parseExamSessionName("Name"), "Name")
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseModuleName("Name - Paper 1 - Written"), "Name")
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseModuleName("Name"), "Name")
     }
     
     func testNUIGWebsiteModuleCodeParsing() {
-        let provider = NUIGWebsiteExamDataProvider()
-        
-        XCTAssertEqual(provider.parseModuleCode("3BCT1-CT318-1"), "CT318")
-        XCTAssertEqual(provider.parseModuleCode("CT318"), "CT318")
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseModuleCode("3BCT1-CT318-1"), "CT318")
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseModuleCode("CT318"), "CT318")
     }
     
     func testPerformanceExample() {

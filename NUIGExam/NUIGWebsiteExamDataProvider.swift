@@ -24,18 +24,22 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
     // contained invalid data.
     var onParseError: (() -> ())? = nil
     
-    private var webview: UIWebView?
+    private let webview: UIWebView
     private var username = ""
     private var password = ""
     private var parseErrorOccured = false
     private var initialLoad = true
     private var examSession = ""
     
+    override init() {
+        webview = UIWebView()
+        super.init()
+        
+        webview.delegate = self
+    }
+    
     // Load and parse the exam timetable from the NUIG website.
     func fetchTimetable(username: String, password: String, completionCallback: ((examSession: String) -> ())? = nil) {
-        webview = UIWebView()
-        webview?.delegate = self
-        
         self.username = username
         self.password = password
         
@@ -44,7 +48,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
         parseErrorOccured = false
         
         let url = NSURL(string: "https://www.mis.nuigalway.ie/regexam/time_table_personal_form.asp")
-        webview?.loadRequest(NSURLRequest(URL: url!))
+        webview.loadRequest(NSURLRequest(URL: url!))
     }
     
     public func webViewDidFinishLoad(webView: UIWebView) {
@@ -58,7 +62,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
             var js = "document.login_form.id_number.value = '" + username + "';"
             js += "document.login_form.password.value = '" + password + "';"
             js += "document.login_form.submit();"
-            webview!.stringByEvaluatingJavaScriptFromString(js)
+            webview.stringByEvaluatingJavaScriptFromString(js)
             
             // Clean up sensitive data.
             username = ""
@@ -67,7 +71,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
         }
         
         // When the password was wrong, the title will contain 'Invalid Password'.
-        let hasPassword = webview?.stringByEvaluatingJavaScriptFromString("document.title.lastIndexOf('Password')")
+        let hasPassword = webview.stringByEvaluatingJavaScriptFromString("document.title.lastIndexOf('Password')")
         if hasPassword != "-1" {
             if let f = onIncorrectPassword {
                 f()
@@ -76,7 +80,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
         }
         
         // When the username was wrong, the title will contain 'No such student'.
-        let hasStudent = webview?.stringByEvaluatingJavaScriptFromString("document.title.lastIndexOf('student')")
+        let hasStudent = webview.stringByEvaluatingJavaScriptFromString("document.title.lastIndexOf('student')")
         if hasStudent != "-1" {
             if let f = onIncorrectUsername {
                 f()
@@ -108,7 +112,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
     }
     
     private func eval(js: String) -> String {
-        if let result = webview!.stringByEvaluatingJavaScriptFromString(js) {
+        if let result = webview.stringByEvaluatingJavaScriptFromString(js) {
             return result
         }
         parseError()
@@ -120,7 +124,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
     }
     
     // Return 'Semester 1 2014/2015' from a string like ' Semester 1 2014/2015 - 0000000'.
-    public func parseExamSessionName(title: String) -> String {
+    public class func parseExamSessionName(title: String) -> String {
         let match = title.componentsSeparatedByString("-")
         if !match.isEmpty {
             return match[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -129,7 +133,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
     }
     
     // Return 'CT318' from a string like '3BCT1-CT318-1'.
-    public func parseModuleCode(module: String) -> String {
+    public class func parseModuleCode(module: String) -> String {
         let match = module.componentsSeparatedByString("-")
         if match.count > 1 {
             return match[1]
@@ -138,7 +142,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
     }
     
     // Return 'Name' from a string like 'Name - Paper 1 - Written'.
-    public func parseModuleName(exam: String) -> String {
+    public class func parseModuleName(exam: String) -> String {
         let match = exam.componentsSeparatedByString("-")
         if !match.isEmpty {
             return match[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -156,7 +160,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
         
         // Get the name of the current examination period
         let title = eval("document.title.substr( document.title.indexOf('for:') + 4 )")
-        examSession = parseExamSessionName(title)
+        examSession = NUIGWebsiteExamDataProvider.parseExamSessionName(title)
         
         let rowCount = eval("document.body.getElementsByTagName('tr').length")
         if var rows = rowCount.toInt() {
@@ -170,8 +174,8 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
                 let date = tableCell(row, 1)
                 let time = tableCell(row, 2)
                 if let d = dateParser.dateFromString(date + " " + time) {
-                    let module = parseModuleCode(tableCell(row, 3))
-                    let name = parseModuleName(tableCell(row + 1, 1))
+                    let module = NUIGWebsiteExamDataProvider.parseModuleCode(tableCell(row, 3))
+                    let name = NUIGWebsiteExamDataProvider.parseModuleName(tableCell(row + 1, 1))
                     let venue = tableCell(row + 2, 1)
                     Exam.create(self.managedObjectContext!, code: module, name: name, date: d, venue: venue)
                 } else {
