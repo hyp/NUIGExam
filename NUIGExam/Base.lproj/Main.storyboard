@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Exam" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="82" id="KVN-Le-aQF" customClass="ExamCell" customModule="NUIGExam" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Exam" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="61" id="KVN-Le-aQF" customClass="ExamCell" customModule="NUIGExam" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KVN-Le-aQF" id="XhL-E5-HIZ">
@@ -44,29 +44,33 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vih-KP-dim">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vih-KP-dim">
                                             <rect key="frame" x="15" y="32" width="400" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKA-IK-IHb">
-                                            <rect key="frame" x="15" y="53" width="400" height="21"/>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziW-wJ-Wl6">
+                                            <rect key="frame" x="202" y="8" width="81" height="25"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziW-wJ-Wl6">
-                                            <rect key="frame" x="206" y="51" width="81" height="25"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <size key="shadowOffset" width="1" height="1"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="DisclosureIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-Km-dQ8">
+                                            <rect key="frame" x="282" y="14" width="8" height="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="13" id="0l7-FB-KdJ"/>
+                                                <constraint firstAttribute="width" constant="8" id="fGK-jB-Gy7"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="du1-04-OZv" secondAttribute="trailing" constant="15" id="IVm-nc-UwA"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ziW-wJ-Wl6" secondAttribute="trailing" constant="7" id="NKE-F2-M2B"/>
+                                        <constraint firstItem="Vih-KP-dim" firstAttribute="leading" secondItem="XhL-E5-HIZ" secondAttribute="leading" constant="15" id="BvT-Nu-PXh"/>
+                                        <constraint firstAttribute="trailing" secondItem="du1-04-OZv" secondAttribute="trailing" constant="30" id="IVm-nc-UwA"/>
+                                        <constraint firstAttribute="trailing" secondItem="ziW-wJ-Wl6" secondAttribute="trailing" constant="30" id="NKE-F2-M2B"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vih-KP-dim" secondAttribute="trailing" constant="15" id="UpX-D3-Phd"/>
+                                        <constraint firstAttribute="trailing" secondItem="8dJ-Km-dQ8" secondAttribute="trailing" constant="15" id="hpL-WH-yPF"/>
                                         <constraint firstItem="du1-04-OZv" firstAttribute="leading" secondItem="XhL-E5-HIZ" secondAttribute="leading" constant="15" id="qzc-n8-9nI"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -74,7 +78,6 @@
                                     <outlet property="descriptionLabel" destination="Vih-KP-dim" id="5Hv-Nk-myr"/>
                                     <outlet property="nameLabel" destination="du1-04-OZv" id="g9l-yc-k0t"/>
                                     <outlet property="seatLabel" destination="ziW-wJ-Wl6" id="8Yq-cA-PAb"/>
-                                    <outlet property="venueLabel" destination="iKA-IK-IHb" id="11r-6r-1AF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -207,6 +210,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DisclosureIcon" width="8" height="13"/>
         <image name="NUI_Galway_BrandMark" width="381" height="109"/>
     </resources>
 </document>

@@ -21,23 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func createTestData() {
-        
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.MediumStyle
         formatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
-        var a = Exam.create(self.managedObjectContext!, code: "CT331", name: "Programming Paradigms", date: formatter.dateFromString("Dec 10, 2014, 9:30 AM")!, venue: "Leisureland")
-        a.seatNumber = 300
-        
-        var b = Exam.create(self.managedObjectContext!, code: "CT318", name: "Human Computer Interaction", date: formatter.dateFromString("Dec 8, 2014, 9:30 AM")!, venue: "Leisureland")
-        b.seatNumber = 60
-        
-        let exam = Exam.create(self.managedObjectContext!, code: "CTNOW", name: "Swift iOS Studies", date: NSDate(), venue: "Here")
-        exam.seatNumber = 100
-        Exam.create(self.managedObjectContext!, code: "CTNOW", name: "Swift iOS Studies", date: NSDate().dateByAddingTimeInterval(-60*61), venue: "Here")
-        
-        
-        Exam.create(self.managedObjectContext!, code: "CTNOW", name: "Swift iOS Studies", date: NSDate().dateByAddingTimeInterval(60*120), venue: "Here")
+        Exam.create(self.managedObjectContext!, code: "CT404", name: "Graphics & Image Process", date: formatter.dateFromString("Dec 9, 2014, 9:30 AM")!, venue: "Galway Bay Hotel, Salthill (Lettermore Suite)")
+        Exam.create(self.managedObjectContext!, code: "CT423", name: "Systems Theory", date: formatter.dateFromString("Dec 10, 2014, 9:30 AM")!, venue: "Kingfisher (NUIG) Sports Centre");
+        Exam.create(self.managedObjectContext!, code: "CT417", name: "Software Engineering III", date: formatter.dateFromString("Dec 10, 2014, 4:30 PM")!, venue: "Leisureland").seatNumber = 200;
+        Exam.create(self.managedObjectContext!, code: "CT422", name: "Modern Information Management", date: formatter.dateFromString("Dec 15, 2014, 9:30 AM")!, venue: "Leisureland").seatNumber = 200;
+        Exam.create(self.managedObjectContext!, code: "CT414", name: "Distributed System & Co Operative Computing", date: formatter.dateFromString("Dec 16, 2014, 9:30 AM")!, venue: "Leisureland").seatNumber = 200;
+        Exam.create(self.managedObjectContext!, code: "CT421", name: "Artificial Intelligence", date: formatter.dateFromString("Dec 18, 2014, 9:30 AM")!, venue: "Galway Bay Hotel, Salthill (Ballyvaughan Suite)").seatNumber = 200;
     }
 
     func applicationWillResignActive(application: UIApplication) {

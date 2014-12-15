@@ -5,7 +5,6 @@ import CoreData
 class ExamCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var venueLabel: UILabel!
     @IBOutlet weak var seatLabel: UILabel!
 }
 
@@ -134,27 +133,24 @@ class MasterViewController: UITableViewController {
         if exam.isFinished {
             return 40
         }
-        return 82
+        return 61
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as ExamCell
         let exam = exams[indexPath.section][indexPath.row]
         
-        cell.nameLabel.text = exam.code + " " + exam.name
+        cell.nameLabel.text = exam.name
         if exam.isFinished {
             cell.nameLabel.enabled = false
             cell.descriptionLabel.hidden = true
-            cell.venueLabel.hidden = true
-            cell.seatLabel.hidden = true
             return cell
         }
-        cell.descriptionLabel.text = timeFormatter.stringFromDate(exam.date)
-        cell.venueLabel.text = exam.venue
+        let date = timeFormatter.stringFromDate(exam.date)
         if exam.seatNumber.boolValue {
-            cell.seatLabel.text = "Seat " + exam.seatNumber.description
+            cell.descriptionLabel.text = "\(date) · Seat \(exam.seatNumber) · \(exam.venue)"
         } else {
-            cell.seatLabel.text = ""
+            cell.descriptionLabel.text = "\(date) · \(exam.venue)"
         }
         return cell
     }
