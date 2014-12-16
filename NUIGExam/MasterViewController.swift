@@ -6,6 +6,7 @@ class ExamCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var seatLabel: UILabel!
+    
 }
 
 // Displays the exam timetable.
@@ -99,6 +100,13 @@ class MasterViewController: UITableViewController {
     }
 
     // MARK: - Table View
+    
+    func selectedExam() -> Exam? {
+        if let selection = tableView.indexPathForSelectedRow() {
+            return exams[selection.section][selection.row]
+        }
+        return nil
+    }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if !exams.isEmpty {
@@ -122,6 +130,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exams[section].count
+
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -159,7 +168,12 @@ class MasterViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return false
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showExam" {
+            (segue.destinationViewController as ExamViewController).exam = selectedExam()
+        }
+    }
 
 }
 

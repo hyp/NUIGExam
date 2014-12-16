@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func testRun() {
         clearExamTimetable()
         let prefs = NSUserDefaults.standardUserDefaults()
-        prefs.setBool(false, forKey: "isLoggedIn")
+        prefs.setBool(true, forKey: "isLoggedIn")
         
         createTestData()
         saveContext()
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Exam.create(self.managedObjectContext!, code: "CT423", name: "Systems Theory", date: formatter.dateFromString("Dec 10, 2014, 9:30 AM")!, venue: "Kingfisher (NUIG) Sports Centre");
         Exam.create(self.managedObjectContext!, code: "CT417", name: "Software Engineering III", date: formatter.dateFromString("Dec 10, 2014, 4:30 PM")!, venue: "Leisureland").seatNumber = 200;
         Exam.create(self.managedObjectContext!, code: "CT422", name: "Modern Information Management", date: formatter.dateFromString("Dec 15, 2014, 9:30 AM")!, venue: "Leisureland").seatNumber = 200;
-        Exam.create(self.managedObjectContext!, code: "CT414", name: "Distributed System & Co Operative Computing", date: formatter.dateFromString("Dec 16, 2014, 9:30 AM")!, venue: "Leisureland").seatNumber = 200;
+        Exam.create(self.managedObjectContext!, code: "CT414", name: "Distributed System & Co Operative Computing", date: formatter.dateFromString("Dec 16, 2014, 9:30 AM")!, venue: "Bailey Allen Hall - Section A").seatNumber = 200;
         Exam.create(self.managedObjectContext!, code: "CT421", name: "Artificial Intelligence", date: formatter.dateFromString("Dec 18, 2014, 9:30 AM")!, venue: "Galway Bay Hotel, Salthill (Ballyvaughan Suite)").seatNumber = 200;
     }
 

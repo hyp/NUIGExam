@@ -19,6 +19,8 @@
 		FA3978C21A3CEBD300BC6ECF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3978C01A3CEBD300BC6ECF /* Info.plist */; };
 		FA3978C31A3CEBD300BC6ECF /* NUIGExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3978C11A3CEBD300BC6ECF /* NUIGExamTests.swift */; };
 		FA5772081A3A669000265041 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5772071A3A669000265041 /* CoreData.framework */; };
+		FAA519531A3F74DD00B39807 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA519521A3F74DD00B39807 /* MapKit.framework */; };
+		FAA519551A40607D00B39807 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA519541A40607D00B39807 /* ExamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		FA3978C01A3CEBD300BC6ECF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA3978C11A3CEBD300BC6ECF /* NUIGExamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUIGExamTests.swift; sourceTree = "<group>"; };
 		FA5772071A3A669000265041 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FAA519521A3F74DD00B39807 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FAA519541A40607D00B39807 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA519531A3F74DD00B39807 /* MapKit.framework in Frameworks */,
 				FA5772081A3A669000265041 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +75,7 @@
 		FA29488E1A39DAFE00971AD6 = {
 			isa = PBXGroup;
 			children = (
+				FAA519521A3F74DD00B39807 /* MapKit.framework */,
 				FA3978BF1A3CEBD300BC6ECF /* NUIGExamTests */,
 				FA3978A11A3CEA9B00BC6ECF /* NUIGExam */,
 				FA5772071A3A669000265041 /* CoreData.framework */,
@@ -98,6 +104,7 @@
 				FA3978AB1A3CEA9B00BC6ECF /* LoginViewController.swift */,
 				FA3978AC1A3CEA9B00BC6ECF /* MasterViewController.swift */,
 				FA3978AD1A3CEA9B00BC6ECF /* NUIGWebsiteExamDataProvider.swift */,
+				FAA519541A40607D00B39807 /* ExamViewController.swift */,
 			);
 			path = NUIGExam;
 			sourceTree = "<group>";
@@ -160,6 +167,11 @@
 				TargetAttributes = {
 					FA2948961A39DAFE00971AD6 = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FA2948AD1A39DAFE00971AD6 = {
 						CreatedOnToolsVersion = 6.1;
@@ -215,6 +227,7 @@
 				FA3978B61A3CEA9B00BC6ECF /* NUIGWebsiteExamDataProvider.swift in Sources */,
 				FA3978B51A3CEA9B00BC6ECF /* MasterViewController.swift in Sources */,
 				FA3978B41A3CEA9B00BC6ECF /* LoginViewController.swift in Sources */,
+				FAA519551A40607D00B39807 /* ExamViewController.swift in Sources */,
 				FA3978AE1A3CEA9B00BC6ECF /* AppDelegate.swift in Sources */,
 				FA3978B01A3CEA9B00BC6ECF /* DataModel.xcdatamodeld in Sources */,
 				FA3978B11A3CEA9B00BC6ECF /* Exam.swift in Sources */,
