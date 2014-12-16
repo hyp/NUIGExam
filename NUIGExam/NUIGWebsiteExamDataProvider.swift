@@ -176,7 +176,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
                 if let d = dateParser.dateFromString(date + " " + time) {
                     let module = NUIGWebsiteExamDataProvider.parseModuleCode(tableCell(row, 3))
                     let name = NUIGWebsiteExamDataProvider.parseModuleName(tableCell(row + 1, 1))
-                    let venue = tableCell(row + 2, 1)
+                    let venue = tableCell(row + 2, 1).capitalizedString.stringByReplacingOccurrencesOfString("Nuig", withString: "NUIG")
                     Exam.create(self.managedObjectContext!, code: module, name: name, date: d, venue: venue)
                 } else {
                     parseError()
