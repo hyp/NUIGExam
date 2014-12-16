@@ -150,6 +150,15 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
         return exam
     }
     
+    // Return 'Paper 1' from a string like 'Name - Paper 1 - Written'.
+    public class func parseExamPaper(exam: String) -> String {
+        let match = exam.componentsSeparatedByString("-")
+        if match.count > 1 {
+            return match[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        }
+        return ""
+    }
+
     func parseTimetable() {
         
         // Irish locale is used to parse a time value like '9:30' or '16:30'
@@ -175,9 +184,11 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
                 let time = tableCell(row, 2)
                 if let d = dateParser.dateFromString(date + " " + time) {
                     let module = NUIGWebsiteExamDataProvider.parseModuleCode(tableCell(row, 3))
-                    let name = NUIGWebsiteExamDataProvider.parseModuleName(tableCell(row + 1, 1))
+                    let examInfo = tableCell(row + 1, 1)
+                    let name = NUIGWebsiteExamDataProvider.parseModuleName(examInfo)
                     let venue = tableCell(row + 2, 1).capitalizedString.stringByReplacingOccurrencesOfString("Nuig", withString: "NUIG")
-                    Exam.create(self.managedObjectContext!, code: module, name: name, date: d, venue: venue)
+                    let paper = NUIGWebsiteExamDataProvider.parseExamPaper(examInfo)
+                    Exam.create(self.managedObjectContext!, code: module, name: name, date: d, venue: venue, paper: paper)
                 } else {
                     parseError()
                 }

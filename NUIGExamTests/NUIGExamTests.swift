@@ -29,6 +29,11 @@ class NUIGExamTests: XCTestCase {
         XCTAssertEqual(NUIGWebsiteExamDataProvider.parseModuleCode("CT318"), "CT318")
     }
     
+    func testNUIGWebsiteExampPaperParsing() {
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseExamPaper("Name - Paper 1 - Written"), "Paper 1")
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseExamPaper("Name"), "")
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {

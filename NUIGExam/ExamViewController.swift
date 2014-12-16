@@ -22,7 +22,7 @@ class ExamViewController: UITableViewController, MKMapViewDelegate {
         if let exam = exam {
             navigationItem.title = exam.code
             examName.text = exam.name
-            examPaper.text = "Paper 1"
+            examPaper.text = exam.paper
             venue.text = exam.venue
             date.text = dateTimeFormatter.stringFromDate(exam.date)
             length.text = "2 Hours"
