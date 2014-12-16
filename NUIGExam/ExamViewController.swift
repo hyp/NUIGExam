@@ -19,15 +19,6 @@ class ExamViewController: UITableViewController, MKMapViewDelegate {
         dateTimeFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         dateTimeFormatter.locale = NSLocale(localeIdentifier: "en-IE")
         
-        let galway = CLLocationCoordinate2D(latitude: 53.2839115,longitude: -9.0487465)
-        let leisureland = CLLocationCoordinate2D(latitude: 53.259039, longitude: -9.082346)
-        let galwayBayHotel = CLLocationCoordinate2D(latitude: 53.258217, longitude: -9.084942)
-        let kingfisherNUIG = CLLocationCoordinate2D(latitude: 53.282077, longitude: -9.062358)
-        let baileyAllenHallNUIG = CLLocationCoordinate2D(latitude: 53.278436, longitude: -9.058013)
-        let nuig = CLLocationCoordinate2D(latitude: 53.278552, longitude: -9.060518)
-        
-        var location = nuig
-        
         if let exam = exam {
             navigationItem.title = exam.code
             examName.text = exam.name
@@ -36,26 +27,17 @@ class ExamViewController: UITableViewController, MKMapViewDelegate {
             date.text = dateTimeFormatter.stringFromDate(exam.date)
             length.text = "2 Hours"
             
-            if let _ = exam.venue.rangeOfString("leisureland", options: .CaseInsensitiveSearch) {
-                location = leisureland
-            } else if let _ = exam.venue.rangeOfString("galway bay hotel", options: .CaseInsensitiveSearch) {
-                location = galwayBayHotel
-            } else if let _ = exam.venue.rangeOfString("kingfisher", options: .CaseInsensitiveSearch) {
-                location = kingfisherNUIG
-            } else if let _ = exam.venue.rangeOfString("bailey allen", options: .CaseInsensitiveSearch) {
-                location = baileyAllenHallNUIG
-            }
+            let location = exam.location
+            let span = MKCoordinateSpanMake(0.008, 0.008)
+            let region = MKCoordinateRegion(center: location, span: span)
+            mapView.setRegion(region, animated: false)
+            
+            // Shown a pin at the exam location
+            let annotation = MKPointAnnotation()
+            annotation.setCoordinate(location)
+            mapView.addAnnotation(annotation)
         }
     
-        let span = MKCoordinateSpanMake(0.008, 0.008)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: false)
-        
-        // Shown a pin at the exam location
-        let annotation = MKPointAnnotation()
-        annotation.setCoordinate(location)
-        mapView.addAnnotation(annotation)
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "onAction")
     }
     

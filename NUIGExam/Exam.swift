@@ -1,5 +1,6 @@
 import Foundation
 import CoreData
+import MapKit
 
 // A Serializable Exam Entity
 class Exam: NSManagedObject {
@@ -16,6 +17,20 @@ class Exam: NSManagedObject {
             return date.dateByAddingTimeInterval(60*60).compare(NSDate()) == NSComparisonResult.OrderedAscending
         }
     }
+    
+    // Returns the physical location of the exam venue
+    var location: CLLocationCoordinate2D {
+        get {
+            for (name, loc) in locationCoordinates {
+                if let _ = venue.rangeOfString(name, options: .CaseInsensitiveSearch) {
+                    return loc
+                }
+            }
+            
+            // NUIG's location
+            return CLLocationCoordinate2D(latitude: 53.278552, longitude: -9.060518)
+        }
+    }
 
     class func create(ctx: NSManagedObjectContext, code: String, name: String, date: NSDate, venue: String) -> Exam {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("Exam", inManagedObjectContext: ctx) as Exam
@@ -27,3 +42,12 @@ class Exam: NSManagedObject {
         return newItem
     }
 }
+
+let locationCoordinates = [
+    "leisureland":          CLLocationCoordinate2D(latitude: 53.259039, longitude: -9.082346),
+    "galway bay hotel":     CLLocationCoordinate2D(latitude: 53.258217, longitude: -9.084942),
+    "westwood house hotel": CLLocationCoordinate2D(latitude: 53.2825866, longitude: -9.0638771),
+    "westwood hotel":       CLLocationCoordinate2D(latitude: 53.2825866, longitude: -9.0638771),
+    "kingfisher":           CLLocationCoordinate2D(latitude: 53.282077, longitude: -9.062358),
+    "bailey allen":         CLLocationCoordinate2D(latitude: 53.278436, longitude: -9.058013)
+]
