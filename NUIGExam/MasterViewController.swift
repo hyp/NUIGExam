@@ -37,7 +37,7 @@ class MasterViewController: UITableViewController {
             self.performSegueWithIdentifier("showLogin", sender: self)
         } else {
             if let examSession = prefs.stringForKey("examSession") {
-                self.navigationItem.title = "NUIG Exams - " + examSession
+                self.navigationItem.title = examSession + " Exams"
             }
             fetchExams()
         }
