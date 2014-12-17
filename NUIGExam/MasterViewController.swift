@@ -140,9 +140,9 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let exam = exams[indexPath.section][indexPath.row]
         if exam.isFinished {
-            return 40
+            return 44
         }
-        return 61
+        return 64
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

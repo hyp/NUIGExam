@@ -32,20 +32,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Exam" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="61" id="KVN-Le-aQF" customClass="ExamCell" customModule="NUIGExam" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Exam" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="64" id="KVN-Le-aQF" customClass="ExamCell" customModule="NUIGExam" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KVN-Le-aQF" id="XhL-E5-HIZ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du1-04-OZv">
-                                            <rect key="frame" x="15" y="8" width="570" height="24"/>
+                                            <rect key="frame" x="15" y="10" width="570" height="25"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vih-KP-dim">
-                                            <rect key="frame" x="15" y="32" width="400" height="21"/>
+                                            <rect key="frame" x="15" y="34" width="400" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                                             <size key="shadowOffset" width="1" height="1"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="DisclosureIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-Km-dQ8">
-                                            <rect key="frame" x="282" y="14" width="8" height="13"/>
+                                            <rect key="frame" x="282" y="16" width="8" height="13"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="13" id="0l7-FB-KdJ"/>
                                                 <constraint firstAttribute="width" constant="8" id="fGK-jB-Gy7"/>
