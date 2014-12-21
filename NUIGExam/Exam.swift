@@ -63,5 +63,6 @@ let locationCoordinates = [
     "westwood house hotel": CLLocationCoordinate2D(latitude: 53.2825866, longitude: -9.0638771),
     "westwood hotel":       CLLocationCoordinate2D(latitude: 53.2825866, longitude: -9.0638771),
     "kingfisher":           CLLocationCoordinate2D(latitude: 53.282077, longitude: -9.062358),
-    "bailey allen":         CLLocationCoordinate2D(latitude: 53.278436, longitude: -9.058013)
+    "bailey allen":         CLLocationCoordinate2D(latitude: 53.278436, longitude: -9.058013),
+    "the cube":             CLLocationCoordinate2D(latitude: 53.278436, longitude: -9.058013)
 ]
