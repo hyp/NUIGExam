@@ -23,6 +23,8 @@ class LoginViewController: UIViewController {
             return
         }
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+
         dataProvider = NUIGWebsiteExamDataProvider()
         dataProvider!.onIncorrectPassword = {
             self.error("Incorrect Password")
@@ -47,6 +49,7 @@ class LoginViewController: UIViewController {
             KeychainService.save("studentID", studentID)
             KeychainService.save("password", pwd)
             
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
