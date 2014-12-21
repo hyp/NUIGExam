@@ -55,11 +55,18 @@ class MasterViewController: UITableViewController {
         dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
         dateFormatter.doesRelativeDateFormatting = true
         
+        let infoButton = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: infoButton.currentImage, style: UIBarButtonItemStyle.Plain, target: self, action: "showInfo")
+
         // Scroll to show the next exam.
         /*
         dispatch_async(dispatch_get_main_queue()) {
             self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 1), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
         }*/
+    }
+
+    func showInfo() {
+        performSegueWithIdentifier("showInfo", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
