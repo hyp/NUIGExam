@@ -21,6 +21,7 @@
 		FA5772081A3A669000265041 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5772071A3A669000265041 /* CoreData.framework */; };
 		FAA519531A3F74DD00B39807 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA519521A3F74DD00B39807 /* MapKit.framework */; };
 		FAA519551A40607D00B39807 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA519541A40607D00B39807 /* ExamViewController.swift */; };
+		FAA519571A46F58300B39807 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA519561A46F58300B39807 /* KeychainService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		FA5772071A3A669000265041 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FAA519521A3F74DD00B39807 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FAA519541A40607D00B39807 /* ExamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
+		FAA519561A46F58300B39807 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				FA3978AC1A3CEA9B00BC6ECF /* MasterViewController.swift */,
 				FA3978AD1A3CEA9B00BC6ECF /* NUIGWebsiteExamDataProvider.swift */,
 				FAA519541A40607D00B39807 /* ExamViewController.swift */,
+				FAA519561A46F58300B39807 /* KeychainService.swift */,
 			);
 			path = NUIGExam;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				FA3978B41A3CEA9B00BC6ECF /* LoginViewController.swift in Sources */,
 				FAA519551A40607D00B39807 /* ExamViewController.swift in Sources */,
 				FA3978AE1A3CEA9B00BC6ECF /* AppDelegate.swift in Sources */,
+				FAA519571A46F58300B39807 /* KeychainService.swift in Sources */,
 				FA3978B01A3CEA9B00BC6ECF /* DataModel.xcdatamodeld in Sources */,
 				FA3978B11A3CEA9B00BC6ECF /* Exam.swift in Sources */,
 			);

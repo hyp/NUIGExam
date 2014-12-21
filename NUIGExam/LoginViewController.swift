@@ -36,12 +36,16 @@ class LoginViewController: UIViewController {
         dataProvider!.onParseError = {
             self.error("NUIG exam timetable isn't accessible.\nTry using the NUIG website.")
         }
-        dataProvider!.fetchTimetable(studentNumber.text, password: password.text) { (examSession: String) in
+        let studentID = studentNumber.text
+        let pwd = password.text
+        dataProvider!.fetchTimetable(studentID, password: pwd) { (examSession: String) in
             // Save login details and preferences
             let prefs = NSUserDefaults.standardUserDefaults()
             prefs.setBool(true, forKey: "isLoggedIn")
             prefs.setObject(examSession, forKey: "examSession")
             prefs.synchronize()
+            KeychainService.save("studentID", studentID)
+            KeychainService.save("password", pwd)
             
             self.dismissViewControllerAnimated(true, completion: nil)
         }
