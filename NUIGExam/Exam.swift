@@ -11,6 +11,7 @@ class Exam: NSManagedObject {
     @NSManaged var seatNumber: NSNumber
     @NSManaged var venue: String
     @NSManaged var paper: String
+    @NSManaged var duration: NSNumber // the duration of the exam in minutes
     
     // Returns true when an exam is 'done' i.e. 60 minutes after it started.
     var isFinished: Bool {
@@ -33,7 +34,17 @@ class Exam: NSManagedObject {
         }
     }
 
-    class func create(ctx: NSManagedObjectContext, code: String, name: String, date: NSDate, venue: String, paper: String = "Paper 1") -> Exam {
+    // Returns the duration of the exam
+    var durationString: String {
+        get {
+            if duration.integerValue == 0 {
+                return "Unknown"
+            }
+            return duration.integerValue % 60 == 0 ? "\(duration.integerValue/60) Hours" : "\(duration.floatValue/60) Hours"
+        }
+    }
+
+    class func create(ctx: NSManagedObjectContext, code: String, name: String, date: NSDate, venue: String, duration: Int, paper: String = "Paper 1") -> Exam {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("Exam", inManagedObjectContext: ctx) as Exam
         newItem.code = code
         newItem.name = name
@@ -41,6 +52,7 @@ class Exam: NSManagedObject {
         newItem.seatNumber = NSNumber()
         newItem.venue = venue
         newItem.paper = paper
+        newItem.duration = NSNumber(integer: duration)
         return newItem
     }
 }

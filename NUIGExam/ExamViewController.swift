@@ -25,7 +25,7 @@ class ExamViewController: UITableViewController, MKMapViewDelegate {
             examPaper.text = exam.paper
             venue.text = exam.venue
             date.text = dateTimeFormatter.stringFromDate(exam.date)
-            length.text = "2 Hours"
+            length.text = exam.durationString
             
             let location = exam.location
             let span = MKCoordinateSpanMake(0.008, 0.008)

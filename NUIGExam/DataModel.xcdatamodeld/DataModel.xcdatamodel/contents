@@ -3,12 +3,13 @@
     <entity name="Exam" representedClassName="NUIGExam.Exam" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paper" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="seatNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="venue" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Exam" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Exam" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>
