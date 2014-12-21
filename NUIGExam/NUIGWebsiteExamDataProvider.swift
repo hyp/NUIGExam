@@ -59,8 +59,8 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
             initialLoad = false
             
             // Simulate form entry.
-            var js = "document.login_form.id_number.value = '" + username + "';"
-            js += "document.login_form.password.value = '" + password + "';"
+            var js = "document.login_form.id_number.value = '\(username)';"
+            js += "document.login_form.password.value = '\(password)';"
             js += "document.login_form.submit();"
             webview.stringByEvaluatingJavaScriptFromString(js)
             
@@ -120,7 +120,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
     }
     
     private func tableCell(row: Int, _ column: Int) -> String {
-        return eval("document.body.getElementsByTagName('tr')[" + row.description + "]" + ".getElementsByTagName('td')[" + column.description + "].innerText")
+        return eval("document.body.getElementsByTagName('tr')[\(row)]" + ".getElementsByTagName('td')[\(column)].innerText")
     }
     
     // Return 'Semester 1 2014/2015' from a string like ' Semester 1 2014/2015 - 0000000'.
@@ -182,7 +182,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
             for var row = 1; row < rows; row+=4 {
                 let date = tableCell(row, 1)
                 let time = tableCell(row, 2)
-                if let d = dateParser.dateFromString(date + " " + time) {
+                if let d = dateParser.dateFromString("\(date) \(time)") {
                     let module = NUIGWebsiteExamDataProvider.parseModuleCode(tableCell(row, 3))
                     var duration = tableCell(row, 4).toInt() ?? 0
                     let examInfo = tableCell(row + 1, 1)
