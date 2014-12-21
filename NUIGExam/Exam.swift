@@ -3,7 +3,7 @@ import CoreData
 import MapKit
 
 // A Serializable Exam Entity
-class Exam: NSManagedObject {
+public class Exam: NSManagedObject {
 
     @NSManaged var code: String
     @NSManaged var name: String
@@ -14,14 +14,14 @@ class Exam: NSManagedObject {
     @NSManaged var duration: NSNumber // the duration of the exam in minutes
     
     // Returns true when an exam is 'done' i.e. 60 minutes after it started.
-    var isFinished: Bool {
+    public var isFinished: Bool {
         get {
             return date.dateByAddingTimeInterval(60*60).compare(NSDate()) == NSComparisonResult.OrderedAscending
         }
     }
     
     // Returns the physical location of the exam venue
-    var location: CLLocationCoordinate2D {
+    public var location: CLLocationCoordinate2D {
         get {
             for (name, loc) in locationCoordinates {
                 if let _ = venue.rangeOfString(name, options: .CaseInsensitiveSearch) {
@@ -35,7 +35,7 @@ class Exam: NSManagedObject {
     }
 
     // Returns the duration of the exam
-    var durationString: String {
+    public var durationString: String {
         get {
             if duration.integerValue == 0 {
                 return "Unknown"
@@ -44,7 +44,7 @@ class Exam: NSManagedObject {
         }
     }
 
-    class func create(ctx: NSManagedObjectContext, code: String, name: String, date: NSDate, venue: String, duration: Int, paper: String = "Paper 1") -> Exam {
+    public class func create(ctx: NSManagedObjectContext, code: String, name: String, date: NSDate, venue: String, duration: Int, paper: String = "Paper 1") -> Exam {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("Exam", inManagedObjectContext: ctx) as Exam
         newItem.code = code
         newItem.name = name

@@ -1,5 +1,6 @@
 import UIKit
 import XCTest
+import CoreData
 import NUIGExam
 
 class NUIGExamTests: XCTestCase {
@@ -13,7 +14,31 @@ class NUIGExamTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
+    func testExam() {
+        let ctx = NSManagedObjectContext()
+
+        let modelURL = NSBundle.mainBundle().URLForResource("DataModel", withExtension: "momd")!
+        ctx.persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: NSManagedObjectModel(contentsOfURL: modelURL)!)
+
+        var exam = Exam.create(ctx, code: "CT404", name: "Graphics & Image Process", date: NSDate(), venue: "NUIG", duration: 120)
+        XCTAssertEqual(exam.durationString, "2 Hours")
+
+        exam = Exam.create(ctx, code: "CT404", name: "Graphics & Image Process", date: NSDate(), venue: "NUIG", duration: 150)
+        XCTAssertEqual(exam.durationString, "2.5 Hours")
+
+        exam = Exam.create(ctx, code: "CT404", name: "Graphics & Image Process", date: NSDate(), venue: "NUIG", duration: 0)
+        XCTAssertEqual(exam.durationString, "Unknown")
+
+        XCTAssert(!exam.isFinished)
+
+        exam = Exam.create(ctx, code: "CT404", name: "Graphics & Image Process", date: NSDate().dateByAddingTimeInterval(-58*60), venue: "NUIG", duration: 180)
+        XCTAssert(!exam.isFinished)
+
+        exam = Exam.create(ctx, code: "CT404", name: "Graphics & Image Process", date: NSDate().dateByAddingTimeInterval(-120*60), venue: "NUIG", duration: 180)
+        XCTAssert(exam.isFinished)
+    }
+
     func testNUIGWebsiteExamSessionNameParsing() {
         XCTAssertEqual(NUIGWebsiteExamDataProvider.parseExamSessionName(" Semester 1 2014/2015 - 0000000"), "Semester 1 2014/2015")
         XCTAssertEqual(NUIGWebsiteExamDataProvider.parseExamSessionName("Semester 1"), "Semester 1")
