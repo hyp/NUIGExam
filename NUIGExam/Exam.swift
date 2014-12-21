@@ -40,7 +40,7 @@ public class Exam: NSManagedObject {
             if duration.integerValue == 0 {
                 return "Unknown"
             }
-            return duration.integerValue % 60 == 0 ? "\(duration.integerValue/60) Hours" : "\(duration.floatValue/60) Hours"
+            return duration.integerValue % 60 == 0 ? "\(duration.integerValue/60) Hours" : "\(duration.integerValue/60) Hours \(duration.integerValue%60) Minutes"
         }
     }
 

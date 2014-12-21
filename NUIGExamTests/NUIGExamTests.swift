@@ -25,7 +25,7 @@ class NUIGExamTests: XCTestCase {
         XCTAssertEqual(exam.durationString, "2 Hours")
 
         exam = Exam.create(ctx, code: "CT404", name: "Graphics & Image Process", date: NSDate(), venue: "NUIG", duration: 150)
-        XCTAssertEqual(exam.durationString, "2.5 Hours")
+        XCTAssertEqual(exam.durationString, "2 Hours 30 Minutes")
 
         exam = Exam.create(ctx, code: "CT404", name: "Graphics & Image Process", date: NSDate(), venue: "NUIG", duration: 0)
         XCTAssertEqual(exam.durationString, "Unknown")
