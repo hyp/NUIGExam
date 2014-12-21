@@ -1,7 +1,8 @@
 import UIKit
 import MapKit
+import EventKit
 
-class ExamViewController: UITableViewController, MKMapViewDelegate {
+class ExamViewController: UITableViewController, MKMapViewDelegate, UIActionSheetDelegate {
     var exam : Exam? = nil
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var examName: UILabel!
@@ -41,11 +42,41 @@ class ExamViewController: UITableViewController, MKMapViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "onAction")
     }
     
+    // MARK: - Action Sheet
+
     func onAction() {
-        let actions = UIActionSheet(title: nil, delegate: nil, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Get directions", "Add to calendar")
+        let actions = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Get Directions", "Add To Calendar")
         actions.showFromBarButtonItem(navigationItem.rightBarButtonItem, animated: true)
     }
     
+    func actionSheet(myActionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int) {
+        switch(buttonIndex) {
+        case 1:
+            // Get directions
+            let location = exam!.location
+            let destination = MKMapItem(placemark: MKPlacemark(coordinate: location, addressDictionary: nil))
+            destination.name = exam?.venue
+            destination.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+        case 2:
+            // Add to calendar
+            let store = EKEventStore()
+            let event = EKEvent(eventStore: store)
+            event.title = "\(exam!.name) Exam"
+            event.startDate = exam!.date
+            event.endDate = exam!.date.dateByAddingTimeInterval(exam!.duration.doubleValue * 60)
+            store.requestAccessToEntityType(EKEntityTypeEvent) { (granted: Bool, error: NSError!) in
+                if granted {
+                    event.calendar = store.defaultCalendarForNewEvents
+                    var err: NSError? = nil
+                    store.saveEvent(event, span: EKSpanThisEvent, error: &err)
+                }
+            }
+            break
+        default:
+            break
+        }
+    }
+
     // MARK: - Table View
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
