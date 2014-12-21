@@ -143,7 +143,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
     
     // Return 'Name' from a string like 'Name - Paper 1 - Written'.
     public class func parseModuleName(exam: String) -> String {
-        let match = exam.componentsSeparatedByString("-")
+        let match = exam.componentsSeparatedByString(" - ")
         if !match.isEmpty {
             return match[0].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         }
@@ -152,7 +152,7 @@ public class NUIGWebsiteExamDataProvider: NSObject, UIWebViewDelegate {
     
     // Return 'Paper 1' from a string like 'Name - Paper 1 - Written'.
     public class func parseExamPaper(exam: String) -> String {
-        let match = exam.componentsSeparatedByString("-")
+        let match = exam.componentsSeparatedByString(" - ")
         if match.count > 1 {
             return match[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         }

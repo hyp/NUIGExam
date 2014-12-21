@@ -46,6 +46,7 @@ class NUIGExamTests: XCTestCase {
     
     func testNUIGWebsiteModuleNameParsing() {
         XCTAssertEqual(NUIGWebsiteExamDataProvider.parseModuleName("Name - Paper 1 - Written"), "Name")
+        XCTAssertEqual(NUIGWebsiteExamDataProvider.parseModuleName("Name-2 - Paper 1 - Written"), "Name-2")
         XCTAssertEqual(NUIGWebsiteExamDataProvider.parseModuleName("Name"), "Name")
     }
     
